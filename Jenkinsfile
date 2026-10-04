@@ -17,5 +17,14 @@ pipeline{
                 sh 'docker build -t employee-app .'
             }
         }
+        stage('container-creation'){
+            steps{
+                sh '''
+                    docker stop employee-con || true
+                    docker rm employee-con || true
+                    docker run -d -p 80:80 --name employee-con employee-app
+                '''
+            }
+        }
     }
 }
