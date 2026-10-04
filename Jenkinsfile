@@ -22,7 +22,7 @@ pipeline{
                 sh '''
                     docker stop employee-con || true
                     docker rm employee-con || true
-                    docker run -d -p 80:80 --name employee-con employee-app
+                    docker run -d -p 80:8080 --name employee-con employee-app
                 '''
             }
         }
