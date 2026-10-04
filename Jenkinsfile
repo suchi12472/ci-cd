@@ -14,7 +14,7 @@ pipeline{
         }
         stage('Image-conversion'){
             steps{
-                sh 'docker build -t Employee-app .'
+                sh 'docker build -t employee-app .'
             }
         }
     }
